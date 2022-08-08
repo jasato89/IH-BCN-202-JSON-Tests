@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MathLibraryTest {
 
-    int[] array1;
+    int[] array1 = new int[]{1, 2, 3, 4, 5};
     int[] array2;
     MathLibrary mathLibrary = new MathLibrary();
     MathLibrary mathLibrary1;
@@ -15,11 +15,12 @@ public class MathLibraryTest {
 
     @BeforeEach
     void setUp() {
-        mathLibrary1 = new MathLibrary(10);
+
     }
 
     @AfterEach
     void tearDown() {
+        array1 = new int[]{1, 2, 3, 4, 5};
 
     }
 
@@ -28,6 +29,7 @@ public class MathLibraryTest {
     @Test
     @DisplayName("Given a positive number, multiplies it by the saved multiplier")
     void multiply_positiveNumbers_multiply() {
+        array1[2] = 25;
         assertEquals(30, mathLibrary1.multiply(3));
         mathLibrary1.setMultiplier(20);
         assertEquals(60, mathLibrary1.multiply(3));
